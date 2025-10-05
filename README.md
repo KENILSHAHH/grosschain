@@ -1,4 +1,4 @@
-## Grosschain
+# Grosschain
 
 **Subsecond crosschain protocol implementation using Rust.**
 
@@ -17,7 +17,7 @@ Grosschain is an experimental crosschain protocol focused on subsecond finality 
 
 Early-stage implementation. APIs and internals are subject to change.
 
-### Getting Started
+### Getting Started (Rust backend)
 
 Prerequisites:
 - Rust toolchain (`rustup`, `cargo`, latest stable)
@@ -39,16 +39,15 @@ cargo run -- --help
 
 ### Frontend (React + WalletConnect)
 
-The `frontend` app provides a basic React UI with WalletConnect integration via wagmi/viem.
+The React app with WalletConnect (wagmi/viem) lives at the repository root.
 
 Setup:
 ```bash
-cd frontend
 npm install
 ```
 
 Configure environment:
-Create `.env.local` in `frontend` with:
+Create `.env.local` in the repository root with:
 ```bash
 VITE_WALLETCONNECT_PROJECT_ID=your_walletconnect_project_id
 ```
@@ -62,12 +61,6 @@ Notes:
 - Supported chains default to Ethereum `mainnet` and `sepolia`. Update `src/lib/wagmi.ts` as needed.
 - Without `VITE_WALLETCONNECT_PROJECT_ID` set, WalletConnect will be disabled with a console warning.
 
-### Architecture (high level)
-
-- Networking: transports and wire formats for crosschain messages
-- Consensus/ordering: fast-path commit for subsecond finality under healthy conditions
-- Execution: verification, state transition, and replay protection
-
 ### Contributing
 
 Contributions are welcome. Please open an issue to discuss significant changes first.
@@ -75,5 +68,3 @@ Contributions are welcome. Please open an issue to discuss significant changes f
 ### License
 
 TBD. If you intend to use this code, please verify the license in this repository.
-
-
