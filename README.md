@@ -58,7 +58,7 @@ npm run dev
 ```
 
 Notes:
-- Supported chains default to Ethereum `mainnet` and `sepolia`. Update `src/lib/wagmi.ts` as needed.
+- Supported chains default to Ethereum `mainnet` and `sepolia`. Update `src/lib/appkit.tsx` as needed.
 - Without `VITE_WALLETCONNECT_PROJECT_ID` set, WalletConnect will be disabled with a console warning.
 
 ### Contributing
@@ -68,3 +68,12 @@ Contributions are welcome. Please open an issue to discuss significant changes f
 ### License
 
 TBD. If you intend to use this code, please verify the license in this repository.
+
+## Deploying to Vercel
+
+- Install Vercel CLI: `npm i -g vercel`
+- Login: `vercel login`
+- Set env var (project): `vercel env add VITE_WALLETCONNECT_PROJECT_ID production` (repeat for preview if needed)
+- Deploy: `vercel --prod`
+
+Vercel uses `@vercel/static-build` to run `npm run build` and serve the `dist/` output. SPA routing is enabled via `vercel.json`.
